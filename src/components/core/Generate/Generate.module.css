@@ -1,0 +1,71 @@
+    .generate {
+        width: 100%;
+        height: 100%;
+        padding: 16px;
+        background-color: var(--white);
+        border-radius: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .gifPart {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .gif {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    .txtArea {
+        all: unset;
+        width: 98%;
+        border-radius: 8px;
+        font-weight: 600;
+        color: var(--dark);
+        padding: 8px 6px;
+        background-color: color-mix(in srgb, var(--dark) 20%, transparent);
+    }
+
+    .opt {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 6px;
+        color: var(--white);
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all ease-in-out 200ms;
+    }
+
+    .btn:hover {
+        background-color: color-mix(in srgb, var(--mid-dark) 50%, transparent);
+        color: var(--dark);
+    }
+
+    .optBtn {
+        background-color: var(--dark);
+    }
+
+    .gen {
+        background-color: var(--mid-dark);
+    }

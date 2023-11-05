@@ -1,0 +1,153 @@
+.chatroom {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    background-color: var(--white);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 4px var(--mid-dark);
+}
+
+.header>p {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+.signBtn {
+    padding: 8px 16px;
+    color: var(--white);
+    background-color: var(--mid-dark);
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all ease-in-out 200ms;
+}
+
+.roomSection {
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.messageSection {
+    flex: 1 0 10px;
+    overflow-y: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.formSection{
+    flex-grow: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.formSection>input {
+    all: unset;
+    width: calc(100% - 12px);
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+    color: var(--dark);
+    padding: 8px 6px;
+    background-color: color-mix(in srgb, var(--dark) 20%, transparent);
+}
+
+.message{
+    margin-top: 16px;
+    display: flex;
+    gap: 8px;
+    height: 80px;
+}
+.message>img{
+    border-radius: 100%;
+    height: 36px;
+    aspect-ratio: 1 / 1;
+}
+.message>div{
+    height: 100px;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: var(--mid-dark);
+}
+.message>div>img{
+    height: 100%;
+    object-fit: contain;
+}
+.sent{
+    flex-direction: row-reverse;
+}
+
+.options{
+    display: flex;
+}
+.options{
+    background-color: var(--mid-dark);
+    border-radius: 8px 8px 0 0;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+}
+.spinnerSection{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--mid-white);
+    font-weight: 700;
+}
+.optionImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.optionImg>img{
+    height: 80px;
+    object-fit: cover;
+}
+.optionImg:hover{
+    opacity: 60%;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  .options {
+    scrollbar-width: auto;
+    scrollbar-color: #B2B2B2 #333333;
+  }
+
+  /* Chrome, Edge, and Safari */
+  .options::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .options::-webkit-scrollbar-track {
+      background-color: #333333;
+  }
+
+  .options::-webkit-scrollbar-thumb {
+      background: #B2B2B2;
+    border-radius: 0px;
+    border: 0px solid #ffffff;
+  }
