@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import style from './Chatroom.module.css'
 
 import { getFirestore, collection, addDoc, query, orderBy, limit, serverTimestamp } from 'firebase/firestore'
@@ -52,8 +52,11 @@ const Room = ({ app }) => {
             photoURL
         })
 
-        dummy.current.scrollIntoView({ behavior: 'smooth' });
     }
+    
+    useEffect(()=>{
+        dummy.current.scrollIntoView({ behavior: 'smooth' });
+    }, [messages])
 
     const width = useRef();
 
