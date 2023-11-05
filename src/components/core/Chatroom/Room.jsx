@@ -101,7 +101,7 @@ const Gifs = ({link, index, sendMessage})=>{
 async function generateSearched(search) {
     const url = `${URL}&q=${search}&limit=10`;
     const giphyData = await axios.get(url);
-    const data = giphyData.data.data.map((item) => item.images.downsized_medium.url);
+    const data = giphyData.data.data.map((item) => item.images.fixed_height.url);
     return data;
 }
 
