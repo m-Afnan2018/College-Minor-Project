@@ -4,9 +4,54 @@
   "description": "Awesome application to chat and relax",
   "icons": [
     {
-      "src": "favicon.svg",
-      "sizes": "192x192 512x512 64x64 32x32 24x24 16x16",
+      "src": "16x16.svg",
+      "sizes": "16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "24x24.svg",
+      "sizes": "24x24",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "32x32.svg",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "64x64.svg",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "192x192.svg",
+      "sizes": "192x192",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "512x512.svg",
+      "sizes": "512x512",
+      "type": "image/x-icon"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/PhoneShot.png",
+      "type": "image/png",
+      "sizes": "436x682",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/images/PhoneShot2.png",
+      "type": "image/png",
+      "sizes": "434x690",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/images/DesktopShot.png",
+      "type": "image/png",
+      "sizes": "1362x643",
+      "form_factor": "wide"
     }
   ],
   "category": ["fun", "timepass", "shorts"],
