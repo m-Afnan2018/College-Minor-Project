@@ -36,12 +36,6 @@
   ],
   "screenshots": [
     {
-      "src": "/images/PhoneShot.png",
-      "type": "image/png",
-      "sizes": "436x682",
-      "form_factor": "narrow"
-    },
-    {
       "src": "/images/PhoneShot2.png",
       "type": "image/png",
       "sizes": "434x690",
