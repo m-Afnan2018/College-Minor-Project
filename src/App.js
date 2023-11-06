@@ -4,7 +4,7 @@ import Chatroom from './components/core/Chatroom/Chatroom';
 import Generate from './components/core/Generate/Generate';
 
 function App() {
-    const [chat, setChat] = useState(false);
+    const [chat, setChat] = useState(true);
     return (
         <div className="App">
             <h1 className='main-heading'>Dynamic GIF Generator</h1>
