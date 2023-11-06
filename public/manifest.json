@@ -4,8 +4,8 @@
   "description": "Awesome application to chat and relax",
   "icons": [
     {
-      "src": "512x512.svg",
-      "sizes": "any",
+      "src": "144x144.svg",
+      "sizes": "144x144 any",
       "type": "image/svg+xml"
     },
     {
