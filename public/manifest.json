@@ -5,7 +5,7 @@
   "icons": [
     {
       "src": "144x144.svg",
-      "sizes": "144x144 any",
+      "sizes": "any",
       "type": "image/svg+xml"
     },
     {
