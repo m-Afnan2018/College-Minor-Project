@@ -99,7 +99,7 @@ const Gifs = ({ link, index, sendMessage }) => {
     return (
         <div className={style.optionImg}>
             <div style={{ display: loaded ? 'none' : 'block', margin: '12px' }} className='Spinner' />
-            <img style={{ height: loaded ? '80px' : '0px' }} onLoad={() => setLoaded(true)} src={link} key={index} alt='gif' onClick={() => sendMessage(link)} />
+            <img style={{ height: loaded ? '80px' : '0px' }} onLoad={() => setLoaded(true)} src={link[0]} key={index} alt='gif' onClick={() => sendMessage(link[1])} />
         </div>
     )
 }
@@ -107,7 +107,10 @@ const Gifs = ({ link, index, sendMessage }) => {
 async function generateSearched(search) {
     const url = `${URL}&q=${search}&limit=10`;
     const giphyData = await axios.get(url);
-    const data = giphyData.data.data.map((item) => item.images.preview_gif.url);
+    const data = giphyData.data.data.map((item) => [item.images.preview_gif.url, item.images.downsized_large.url]);
+    console.log(giphyData.data.data);
+    console.log(data);
+    console.log(typeof(data));
     return data;
 }
 
