@@ -29,16 +29,22 @@ const Room = ({ app }) => {
 
     const [links, setLinks] = useState([]);
 
-    const search = async (e) => {
-        setFormValue(e.target.value)
-        setLoader(true);
-        setLinks([]);
-        dummy.current.scrollIntoView({ behavior: 'smooth' });
-        const temp = await generateSearched(e.target.value)
-        setLinks(temp);
-        setLoader(false);
-        
-    }
+    useEffect(() => {
+        if(formValue.length === 0){
+            return;
+        }
+        const setting = async()=>{
+            setLoader(true);
+            setLinks([]);
+            dummy.current.scrollIntoView({ behavior: 'smooth' });
+            const temp = await generateSearched(formValue)
+            setLinks(temp);
+            setLoader(false);
+        }
+
+        setting();
+    }, [formValue]);
+
 
     const sendMessage = async (l) => {
         const { uid, photoURL } = auth.currentUser;
@@ -53,8 +59,8 @@ const Room = ({ app }) => {
         })
 
     }
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         dummy.current.scrollIntoView({ behavior: 'smooth' });
     }, [messages])
 
@@ -76,24 +82,24 @@ const Room = ({ app }) => {
                                 <div className='Spinner' />
                             </div> :
                                 links.length > 0 ?
-                                links?.map((link, index) => (<Gifs link={link} index={index} sendMessage={sendMessage}/>)) :
-                                <div className={style.spinnerSection}>Not Found</div>
+                                    links?.map((link, index) => (<Gifs link={link} index={index} sendMessage={sendMessage} />)) :
+                                    <div className={style.spinnerSection}>Not Found</div>
                         }
                     </div>
                 }
-                <input value={formValue} onChange={search} placeholder="search something nice..." />
+                <input value={formValue} onChange={(e)=>setFormValue(e.target.value)} placeholder="search something nice..." />
 
             </form>
         </div>)
 }
 
-const Gifs = ({link, index, sendMessage})=>{
+const Gifs = ({ link, index, sendMessage }) => {
     const [loaded, setLoaded] = useState(false);
 
     return (
         <div className={style.optionImg}>
-            <div style={{display: loaded ? 'none' : 'block', margin: '12px' }} className='Spinner'/>
-            <img style={{height: loaded ? '80px' : '0px'}} onLoad={()=>setLoaded(true)} src={link} key={index} alt='gif' onClick={() => sendMessage(link)} />
+            <div style={{ display: loaded ? 'none' : 'block', margin: '12px' }} className='Spinner' />
+            <img style={{ height: loaded ? '80px' : '0px' }} onLoad={() => setLoaded(true)} src={link} key={index} alt='gif' onClick={() => sendMessage(link)} />
         </div>
     )
 }
