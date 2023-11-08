@@ -27,17 +27,12 @@ const app = initializeApp(firebaseConfig)
 
 const auth = getAuth(app);
 
-const Chatroom = ({chat}) => {
+const Chatroom = ({ chat }) => {
 
     const [user] = useAuthState(auth);
 
-    const signInWithGoogle = () => {
-        const provider = new GoogleAuthProvider();
-        signInWithPopup(auth, provider);
-    }
-
     return (
-        <div className={` ${chat ? 'hide':'show'} ${style.chatroom}`}>
+        <div className={` ${chat ? 'hide' : 'show'} ${style.chatroom}`}>
             <div className={style.header}>
                 <p>Chatroom</p>
                 {user && <div className={style.signBtn} onClick={() => auth.signOut()}>Sign Out</div>}
@@ -52,6 +47,10 @@ const Chatroom = ({chat}) => {
     )
 }
 
+const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider);
+}
 
 
 export default Chatroom
