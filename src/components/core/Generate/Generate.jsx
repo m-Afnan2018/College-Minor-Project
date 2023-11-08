@@ -33,7 +33,7 @@ const Generate = ({chat}) => {
                 }
             </div>
             <div className={`${style.opt}`}>
-                <div className={`${style.optBtn} ${style.btn}`} onClick={Download}>Download</div>
+                <div className={`${style.optBtn} ${style.btn}`} onClick={()=>Download(gifUrl, search)}>Download</div>
             </div>
             <input type='text' className={`${style.txtArea}`} placeholder='Search GIF' value={search} onChange={inputHandler} onKeyDown={(btn) => {btn.key==='Enter' && generate()}}/>
             <div className={`${style.gen} ${style.btn}`} onClick={generate}>Generate {search.length === 0 ? "Random" : "Searched"}</div>
