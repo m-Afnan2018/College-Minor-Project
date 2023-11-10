@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import style from './Generate.module.css'
 import axios from 'axios';
+import gifImage from '../../../assets/giphy.gif'
 
 const key = process.env.REACT_APP_GIF_API_KEY;
 const URL = `${process.env.REACT_APP_URL}?api_key=${key}`;
 
 const Generate = ({chat}) => {
-    const [gifUrl, setGifUrl] = useState('https://media0.giphy.com/media/2oRSthBXzuv6PVHglw/giphy.gif?cid=73009051cqh08zj64xzz2rmbmu403q8uxpolv6xpvk8mf7my&ep=v1_gifs_random&rid=giphy.gif&ct=g');
+    const [gifUrl, setGifUrl] = useState(gifImage);
     const [search, setSearch] = useState('');
     const [loader, setLoader] = useState(false);
 
